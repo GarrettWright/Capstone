@@ -1,0 +1,10 @@
+SELECT Classes.Class_ID, Classes.ClassName, Class.Prof, Class.CreditHours
+FROM Classes
+INNER JOIN Majors ON Classes.Major_ID = Majors.Major_ID
+INNER JOIN Student ON Student.Major_ID = Majors.Major_ID
+WHERE Student.Student_ID = [insert student ID here];
+
+SELECT Student.name
+FROM Student
+INNER JOIN Classes ON Student.Major_ID = Classes.Major_ID
+WHERE Classes.Class_ID = [insert class ID here];
